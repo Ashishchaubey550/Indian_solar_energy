@@ -141,7 +141,7 @@ export default function Header() {
                       >
                         {item.icon && <span className="text-gray-600">{item.icon}</span>}
                         <span className="flex-1">{item.label}</span>
-                        {item.hasNested && (
+                        {(item as any).hasNested && (
                           <div className="w-5 h-5 bg-[#0f2e1a] rounded flex items-center justify-center text-white shrink-0">
                             <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M9 5l7 7-7 7" />
@@ -151,9 +151,9 @@ export default function Header() {
                       </Link>
 
                       {/* Second-level Dropdown */}
-                      {item.hasNested && item.nested && (
+                      {(item as any).hasNested && (item as any).nested && (
                         <div className="absolute top-0 left-full ml-1 w-44 bg-white/95 backdrop-blur-md rounded-lg shadow-xl py-2 opacity-0 invisible group-hover/nested:opacity-100 group-hover/nested:visible transition-all duration-200 border border-white/50">
-                           {item.nested.map((subItem) => (
+                           {(item as any).nested.map((subItem: any) => (
                               <Link
                                 key={subItem.label}
                                 href={subItem.href}
