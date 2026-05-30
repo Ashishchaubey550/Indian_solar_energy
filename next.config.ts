@@ -10,7 +10,7 @@ const ContentSecurityPolicy = `
   base-uri 'self';
   form-action 'self';
   frame-ancestors 'none';
-  frame-src 'self' https://challenges.cloudflare.com;
+  frame-src 'self' https://challenges.cloudflare.com https://www.google.com https://maps.google.com;
   upgrade-insecure-requests;
 `;
 

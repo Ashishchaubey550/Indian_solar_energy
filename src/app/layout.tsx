@@ -4,6 +4,8 @@ import ScrollToTop from "@/components/ScrollToTop";
 import CustomCursor from "@/components/ui/CustomCursor";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import LeadGenModal from "@/components/LeadGenModal";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import "./globals.css";
 
 const poppins = Poppins({
@@ -23,7 +25,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Indian Solar Green Energy | #1 Solar Panel Installation in Gorakhpur",
   description:
-    "Indian Solar Green Energy provides affordable solar panel installation, rooftop solar systems, and green energy solutions in Gorakhpur, UP. Save up to 90% on electricity bills. Get a free quote today!",
+    "Indian Solar Green Energy provides affordable solar panel installation, rooftop solar systems, and green energy solutions in Gorakhpur, UP. Save up to 90% on electricity bills. Get a free quotation today!",
   keywords: [
     "solar panel installation Gorakhpur",
     "solar energy Gorakhpur",
@@ -118,6 +120,8 @@ export default function RootLayout({
           <ScrollToTop />
           <CustomCursor />
         </SmoothScrollProvider>
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );

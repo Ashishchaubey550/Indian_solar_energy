@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useSpring, useTransform } from "framer-motion";
 import Footer from "@/components/Footer";
@@ -118,9 +119,9 @@ export default function HybridSolarPage() {
                      ))}
                    </div>
                    
-                   <button type="submit" className="w-full bg-white hover:bg-gray-100 text-[#18291c] py-4 rounded-full font-bold mt-8 transition-colors shadow-lg">
-                     Get A Free Quote
-                   </button>
+                   <Link href="/contact" className="w-full flex items-center justify-center bg-white hover:bg-gray-100 text-[#18291c] py-4 rounded-full font-bold mt-8 transition-colors shadow-lg">
+                     Get Free Quotation
+                   </Link>
                 </form>
              </div>
           </motion.div>

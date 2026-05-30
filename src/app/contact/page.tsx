@@ -19,6 +19,41 @@ const PageLoader = dynamic(() => import("@/components/PageLoader"), {
 
 export default function ContactPage() {
   const [activeFaq, setActiveFaq] = useState<number | null>(null);
+  
+  // Form State
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<"idle" | "success" | "error">("idle");
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus("idle");
+    setErrorMessage("");
+
+    const formData = new FormData(e.currentTarget);
+    
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message.");
+      }
+
+      setSubmitStatus("success");
+      (e.target as HTMLFormElement).reset(); // Reset form on success
+    } catch (error: any) {
+      setSubmitStatus("error");
+      setErrorMessage(error.message || "An unexpected error occurred.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const heroRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -100,23 +135,23 @@ export default function ContactPage() {
                
                {/* Right Form */}
                <div className="w-full md:w-2/3 bg-white p-8 md:p-12 rounded-[24px] shadow-sm border border-gray-100">
-                  <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
+                  <form className="space-y-6" onSubmit={handleSubmit}>
                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
                           <label className="text-[12px] font-bold text-[#2A2A2A] uppercase tracking-wider pl-1">Name</label>
-                          <input type="text" placeholder="Your full name" className="w-full bg-white border border-gray-200 px-5 py-4 rounded-xl text-[14px] focus:outline-none focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors" />
+                          <input type="text" name="Name" required placeholder="Your full name" className="w-full bg-white border border-gray-200 px-5 py-4 rounded-xl text-[14px] focus:outline-none focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors" />
                         </div>
                         <div className="space-y-2">
                           <label className="text-[12px] font-bold text-[#2A2A2A] uppercase tracking-wider pl-1">Phone</label>
-                          <input type="tel" placeholder="Your phone number" className="w-full bg-white border border-gray-200 px-5 py-4 rounded-xl text-[14px] focus:outline-none focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors" />
+                          <input type="tel" name="Phone" required placeholder="Your phone number" className="w-full bg-white border border-gray-200 px-5 py-4 rounded-xl text-[14px] focus:outline-none focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors" />
                         </div>
                         <div className="space-y-2">
                           <label className="text-[12px] font-bold text-[#2A2A2A] uppercase tracking-wider pl-1">Email</label>
-                          <input type="email" placeholder="Your email address" className="w-full bg-white border border-gray-200 px-5 py-4 rounded-xl text-[14px] focus:outline-none focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors" />
+                          <input type="email" name="Email" required placeholder="Your email address" className="w-full bg-white border border-gray-200 px-5 py-4 rounded-xl text-[14px] focus:outline-none focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors" />
                         </div>
                         <div className="space-y-2">
                           <label className="text-[12px] font-bold text-[#2A2A2A] uppercase tracking-wider pl-1">Topic</label>
-                          <select className="w-full bg-white border border-gray-200 px-5 py-4 rounded-xl text-[14px] focus:outline-none focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors appearance-none text-[#6A6A6A]">
+                          <select name="Topic" className="w-full bg-white border border-gray-200 px-5 py-4 rounded-xl text-[14px] focus:outline-none focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors appearance-none text-[#6A6A6A]">
                             <option>Solar Installation Inquiry</option>
                             <option>Maintenance & Support</option>
                             <option>Partnership Opportunities</option>
@@ -125,12 +160,36 @@ export default function ContactPage() {
                         </div>
                      </div>
                      <div className="space-y-2">
-                       <label className="text-[12px] font-bold text-[#2A2A2A] uppercase tracking-wider pl-1">How can we help?</label>
-                       <textarea rows={5} placeholder="Tell us about your project or inquiry..." className="w-full bg-white border border-gray-200 px-5 py-4 rounded-xl text-[14px] focus:outline-none focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors resize-none"></textarea>
+                       <label className="text-[12px] font-bold text-[#2A2A2A] uppercase tracking-wider pl-1">Address</label>
+                       <input type="text" name="Address" placeholder="Your full address (City, State, Pincode)" className="w-full bg-white border border-gray-200 px-5 py-4 rounded-xl text-[14px] focus:outline-none focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors" />
                      </div>
+                     <div className="space-y-2">
+                       <label className="text-[12px] font-bold text-[#2A2A2A] uppercase tracking-wider pl-1">How can we help?</label>
+                       <textarea name="Message" rows={5} placeholder="Tell us about your project or inquiry..." className="w-full bg-white border border-gray-200 px-5 py-4 rounded-xl text-[14px] focus:outline-none focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors resize-none"></textarea>
+                     </div>
+
+                     {submitStatus === "success" && (
+                       <div className="p-4 bg-green-50 text-green-700 rounded-xl text-sm font-medium border border-green-200">
+                         Thank you! Your message has been sent successfully. We will check it and reply to you soon.
+                       </div>
+                     )}
+
+                     {submitStatus === "error" && (
+                       <div className="p-4 bg-red-50 text-red-700 rounded-xl text-sm font-medium border border-red-200">
+                         {errorMessage}
+                       </div>
+                     )}
+
                      <div className="pt-4">
-                       <button type="submit" className="w-full md:w-auto px-12 py-4 bg-[#18291c] hover:bg-[#2c4a35] text-white rounded-full font-bold transition-colors shadow-lg">
-                         Submit
+                       <button type="submit" disabled={isSubmitting} className="w-full md:w-auto px-12 py-4 bg-[#18291c] hover:bg-[#2c4a35] disabled:opacity-70 disabled:cursor-not-allowed text-white rounded-full font-bold transition-colors shadow-lg flex items-center justify-center gap-2">
+                         {isSubmitting ? (
+                           <>
+                             <div className="w-4 h-4 border-2 border-white border-t-transparent rounded-full animate-spin" />
+                             Sending...
+                           </>
+                         ) : (
+                           "Submit Message"
+                         )}
                        </button>
                      </div>
                   </form>
@@ -139,50 +198,37 @@ export default function ContactPage() {
           </motion.div>
         </section>
 
-        {/* --- 3. Calculator Section --- */}
+        {/* --- 3. Location & Map Section --- */}
         <section className="py-24 px-4 md:px-8 bg-[#FDFDFD]">
           <motion.div 
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="max-w-6xl mx-auto bg-[#F8F7F3] rounded-[30px] p-8 md:p-16 flex flex-col md:flex-row gap-12 items-center"
+            className="max-w-6xl mx-auto bg-[#F8F7F3] rounded-[30px] p-8 md:p-12 flex flex-col gap-12"
           >
-            {/* Left */}
-            <div className="w-full md:w-1/2 space-y-6">
-              <div className="inline-flex items-center justify-center px-4 py-2 rounded-full border border-gray-300 text-[12px] font-bold text-[#2A2A2A] bg-white shadow-sm">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#1b3022] mr-2" /> Start Here
+            <div className="flex flex-col items-center text-center max-w-2xl mx-auto">
+              <div className="inline-flex items-center justify-center px-6 py-2 rounded-full border border-gray-200 text-[13px] font-semibold text-[#2A2A2A] bg-white shadow-sm mb-6">
+                Our Location
               </div>
-              <h2 className="text-3xl md:text-[44px] font-bold text-[#2A2A2A] font-[var(--font-poppins)] leading-[1.2]">
-                See how much you<br/>can save every<br/>month
+              <h2 className="text-3xl md:text-[40px] font-bold text-[#2A2A2A] leading-[1.2] font-[var(--font-poppins)] mb-4">
+                Visit Our Headquarters
               </h2>
-              <p className="text-[#6A6A6A] text-sm md:text-[14px] pt-12 pr-12 leading-relaxed">
-                Get a personalized estimate including monthly savings, recommended solar capacity, and long-term energy benefits.
+              <p className="text-[#6A6A6A] text-[15px] leading-relaxed">
+                Come talk to our experts in person and see our solar technology displays.
               </p>
             </div>
-            {/* Right */}
-            <div className="w-full md:w-1/2 space-y-6">
-              <div>
-                <input type="text" placeholder="PINCODE" className="w-full bg-white border-0 px-6 py-4 rounded-full text-[13px] font-bold text-[#2A2A2A] focus:outline-none focus:ring-2 focus:ring-[#1b3022]/20 shadow-sm placeholder:text-[#A0A0A0] uppercase tracking-wider" />
-              </div>
-              <div className="pt-2">
-                <div className="flex justify-between items-center mb-4 px-2">
-                  <label className="block text-[13px] font-bold text-[#2A2A2A]">Monthly Electricity Bill</label>
-                  <span className="text-[13px] font-bold text-[#2A2A2A]">₹0</span>
-                </div>
-                <div className="relative">
-                   <div className="w-full bg-white p-1.5 rounded-full flex items-center justify-between shadow-sm border border-gray-100">
-                     <div className="bg-[#18291c] w-10 h-10 rounded-full flex items-center justify-center text-white cursor-pointer hover:bg-[#2c4a35] transition-colors">
-                        <ChevronRight className="w-3.5 h-3.5 ml-0.5" strokeWidth={3} />
-                        <ChevronRight className="w-3.5 h-3.5 -ml-2" strokeWidth={3} />
-                     </div>
-                     <span className="text-[#D0D0D0] text-[13px] pr-5 font-medium tracking-wide">₹ 5,000 / Month</span>
-                   </div>
-                </div>
-              </div>
-              <button className="w-full bg-[#18291c] hover:bg-[#2c4a35] text-white py-4 rounded-full font-bold flex items-center justify-center gap-2 mt-2 transition-colors text-[14px] shadow-md">
-                Calculate Now <ArrowRight className="w-4 h-4" />
-              </button>
+
+            <div className="w-full h-[400px] md:h-[500px] rounded-[24px] overflow-hidden shadow-sm border border-gray-200">
+              <iframe 
+                src="https://maps.google.com/maps?q=Partawal+Bazar,+Gorakhpur,+Uttar+Pradesh&t=&z=14&ie=UTF8&iwloc=&output=embed" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen={true} 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+              ></iframe>
             </div>
           </motion.div>
         </section>

@@ -175,9 +175,21 @@ export default function LeadGenModal() {
                       </div>
                     </div>
                     
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                      <div className="space-y-1.5">
+                        <label className="text-[11px] font-bold text-[#A0A0A0] uppercase tracking-wider pl-1">Property Pincode</label>
+                        <input name="Pincode" required type="text" placeholder="Enter Pincode" className="w-full bg-gray-50 border border-gray-200 px-4 py-3.5 rounded-xl text-[14px] text-[#2A2A2A] focus:outline-none focus:bg-white focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors uppercase tracking-wider" />
+                      </div>
+
+                      <div className="space-y-1.5">
+                        <label className="text-[11px] font-bold text-[#A0A0A0] uppercase tracking-wider pl-1">Plant Capacity</label>
+                        <input name="PlantCapacity" required type="text" placeholder="e.g. 5kW" className="w-full bg-gray-50 border border-gray-200 px-4 py-3.5 rounded-xl text-[14px] text-[#2A2A2A] focus:outline-none focus:bg-white focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors uppercase tracking-wider" />
+                      </div>
+                    </div>
+
                     <div className="space-y-1.5">
-                      <label className="text-[11px] font-bold text-[#A0A0A0] uppercase tracking-wider pl-1">Property Pincode</label>
-                      <input name="Pincode" required type="text" placeholder="Enter Pincode" className="w-full bg-gray-50 border border-gray-200 px-4 py-3.5 rounded-xl text-[14px] text-[#2A2A2A] focus:outline-none focus:bg-white focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors uppercase tracking-wider" />
+                      <label className="text-[11px] font-bold text-[#A0A0A0] uppercase tracking-wider pl-1">Full Address</label>
+                      <input name="Address" required type="text" placeholder="Your complete address" className="w-full bg-gray-50 border border-gray-200 px-4 py-3.5 rounded-xl text-[14px] text-[#2A2A2A] focus:outline-none focus:bg-white focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors" />
                     </div>
 
                     <div className="space-y-1.5">

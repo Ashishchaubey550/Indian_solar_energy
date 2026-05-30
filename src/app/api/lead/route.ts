@@ -8,6 +8,8 @@ export async function POST(request: Request) {
     const phone = data.get("Phone");
     const pincode = data.get("Pincode");
     const billAmount = data.get("BillAmount");
+    const plantCapacity = data.get("PlantCapacity");
+    const address = data.get("Address");
 
     // Basic Validation
     if (!name || !phone || !pincode || !billAmount) {
@@ -63,6 +65,8 @@ export async function POST(request: Request) {
     forwardData.append("Phone", phone as string);
     forwardData.append("Pincode", pincode as string);
     forwardData.append("BillAmount", billAmount as string);
+    forwardData.append("PlantCapacity", plantCapacity as string);
+    forwardData.append("Address", address as string);
 
     const sheetsResponse = await fetch(sheetsWebhookUrl, {
       method: "POST",

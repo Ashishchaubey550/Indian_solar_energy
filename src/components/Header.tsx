@@ -8,7 +8,7 @@ import Magnetic from "@/components/Magnetic";
 
 const navLinks = [
   { href: "/", label: "Home" },
-  { href: "/#about", label: "About" },
+  // { href: "/#about", label: "About" },
   {
     href: "/services",
     label: "Services",
@@ -80,7 +80,7 @@ const navLinks = [
       },
     ],
   },
-  { href: "/powering", label: "About Us" },
+  { href: "/about", label: "About Us" },
   { href: "/contact", label: "Contact Us" },
 ];
 
@@ -105,9 +105,9 @@ export default function Header() {
           <Image
             src="/images/logo.png"
             alt="Indian Solar"
-            width={160}
-            height={42}
-            className="h-8 md:h-10 w-auto object-contain"
+            width={240}
+            height={64}
+            className="h-12 md:h-16 w-auto object-contain"
             priority
           />
         </Link>
@@ -178,7 +178,7 @@ export default function Header() {
             href="/contact"
             className="hidden sm:inline-flex bg-[#0f2e1a] text-white px-7 py-3 rounded-full text-[15px] font-semibold hover:bg-black transition-colors shrink-0 shadow-md"
           >
-            Get Free Quote
+            Get Free Quotation
           </Link>
         </Magnetic>
 
@@ -257,7 +257,7 @@ export default function Header() {
                 className="bg-[#0f2e1a] block text-white text-center px-6 py-3.5 rounded-full text-[15px] font-bold mt-4 shadow-md active:scale-95 transition-transform"
                 onClick={() => setMobileOpen(false)}
               >
-                Get Free Quote
+                Get Free Quotation
               </Link>
             </motion.div>
           </motion.nav>

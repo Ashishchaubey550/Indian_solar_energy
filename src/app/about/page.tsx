@@ -91,11 +91,11 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 h-[400px]">
                {/* Left Image */}
                <div className="relative rounded-[24px] overflow-hidden shadow-md h-full mt-12">
-                 <Image src="/images/residential.jpg" alt="Installation" fill className="object-cover" />
+                 <Image src="/images/workers-installing.jpg" alt="Installation" fill className="object-cover" />
                </div>
                {/* Center Image with Overlay */}
                <div className="relative rounded-[24px] overflow-hidden shadow-xl h-full -mt-6">
-                 <Image src="/images/commercial.jpg" alt="Engineers" fill className="object-cover" />
+                 <Image src="/images/quality-check.jpg" alt="Engineers" fill className="object-cover" />
                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex items-end p-8">
                    <p className="text-white text-sm md:text-[15px] font-medium leading-relaxed text-center">
                      We help homes and businesses reduce electricity bills with high-quality solar technology, expert installation, and reliable long-term support.
@@ -104,7 +104,7 @@ export default function AboutPage() {
                </div>
                {/* Right Image */}
                <div className="relative rounded-[24px] overflow-hidden shadow-md h-full mt-12">
-                 <Image src="/images/residential.jpg" alt="Family" fill className="object-cover" />
+                 <Image src="/images/residential-solar.jpg" alt="Family" fill className="object-cover" />
                </div>
             </div>
           </div>
@@ -112,64 +112,69 @@ export default function AboutPage() {
 
         {/* --- 3. Core Values --- */}
         <section className="py-24 px-4 md:px-8 bg-[#F8F7F3]">
-          <div className="max-w-6xl mx-auto flex flex-col md:flex-row gap-16 md:gap-24 items-center">
-             {/* Left */}
-             <div className="w-full md:w-1/2 space-y-8">
-               <div className="inline-flex items-center justify-center px-5 py-2.5 rounded-full border border-gray-200 text-[13px] font-semibold text-[#2A2A2A] bg-white shadow-sm">
-                 Our Core Values
+          <div className="max-w-6xl mx-auto">
+            {/* Top Row: Pill Tag and Title */}
+            <div className="flex flex-col md:flex-row gap-8 md:gap-16 items-start mb-16">
+               <div className="w-full md:w-1/3">
+                 <div className="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-[13px] font-semibold text-[#2A2A2A] bg-white shadow-sm">
+                   Our Core Values
+                 </div>
                </div>
-               <h2 className="text-3xl md:text-[42px] font-bold text-[#2A2A2A] leading-[1.2] font-[var(--font-poppins)] pr-8">
-                 The Core Values That Drive Purposeful and Long-Term Progress
-               </h2>
-               <div className="relative h-[350px] w-full rounded-[30px] overflow-hidden shadow-xl mt-8">
-                 <Image src="/images/rooftop-solar.jpg" alt="Solar farm workers" fill className="object-cover" />
+               <div className="w-full md:w-2/3">
+                 <h2 className="text-3xl md:text-[42px] font-bold text-[#2A2A2A] leading-[1.2] font-[var(--font-poppins)] text-left">
+                   The Core Values That Drive<br className="hidden md:block" />
+                   Purposeful and Long-Term Progress
+                 </h2>
                </div>
-             </div>
-             {/* Right */}
-             <div className="w-full md:w-1/2">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            </div>
+
+            {/* Bottom Row: Image and Cards */}
+            <div className="flex flex-col lg:flex-row gap-6 lg:gap-10">
+               {/* Left: Big Image */}
+               <div className="w-full lg:w-[55%]">
+                 <div className="relative h-[400px] lg:h-[520px] w-full rounded-[24px] overflow-hidden shadow-sm">
+                   <Image src="/images/commercial-solar.jpg" alt="Solar farm workers" fill className="object-cover" />
+                 </div>
+               </div>
+
+               {/* Right: 2x2 Cards Grid */}
+               <div className="w-full lg:w-[45%]">
+                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 h-full">
                    {/* Card 1 */}
-                   <div className="bg-white p-8 rounded-[24px] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between aspect-square">
-                     <div className="w-10 h-10 rounded-full bg-[#18291c] mb-6 flex items-center justify-center shadow-md">
-                       <div className="w-2 h-2 bg-white rounded-full opacity-80" />
-                     </div>
+                   <div className="bg-white p-6 rounded-[20px] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between h-[250px]">
+                     <div className="w-10 h-10 rounded-full bg-[#18291c] mb-6 shadow-sm shrink-0" />
                      <div>
-                       <h3 className="text-[17px] font-bold text-[#2A2A2A] mb-3 leading-snug">Green Energy Focus</h3>
-                       <p className="text-[#6A6A6A] text-[13px] leading-relaxed">Promoting sustainable living with clean solar energy.</p>
+                       <h3 className="text-[17px] font-bold text-[#2A2A2A] mb-2 leading-snug">Clean Energy Focus</h3>
+                       <p className="text-[#6A6A6A] text-[13px] leading-relaxed">Powering a sustainable future with smart solar solutions.</p>
                      </div>
                    </div>
                    {/* Card 2 */}
-                   <div className="bg-white p-8 rounded-[24px] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between aspect-square mt-0 md:mt-12">
-                     <div className="w-10 h-10 rounded-full bg-[#18291c] mb-6 flex items-center justify-center shadow-md">
-                        <div className="w-2 h-2 bg-white rounded-full opacity-80" />
-                     </div>
+                   <div className="bg-white p-6 rounded-[20px] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between h-[250px]">
+                     <div className="w-10 h-10 rounded-full bg-[#18291c] mb-6 shadow-sm shrink-0" />
                      <div>
-                       <h3 className="text-[17px] font-bold text-[#2A2A2A] mb-3 leading-snug">Trusted Relationships</h3>
-                       <p className="text-[#6A6A6A] text-[13px] leading-relaxed">Building long-term trust through transparent and honest service.</p>
+                       <h3 className="text-[17px] font-bold text-[#2A2A2A] mb-2 leading-snug">Trusted Relationships</h3>
+                       <p className="text-[#6A6A6A] text-[13px] leading-relaxed">Building long-term trust through transparency and reliable service.</p>
                      </div>
                    </div>
                    {/* Card 3 */}
-                   <div className="bg-white p-8 rounded-[24px] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between aspect-square">
-                     <div className="w-10 h-10 rounded-full bg-[#18291c] mb-6 flex items-center justify-center shadow-md">
-                        <div className="w-2 h-2 bg-white rounded-full opacity-80" />
-                     </div>
+                   <div className="bg-white p-6 rounded-[20px] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between h-[250px]">
+                     <div className="w-10 h-10 rounded-full bg-[#18291c] mb-6 shadow-sm shrink-0" />
                      <div>
-                       <h3 className="text-[17px] font-bold text-[#2A2A2A] mb-3 leading-snug">Performance Driven</h3>
-                       <p className="text-[#6A6A6A] text-[13px] leading-relaxed">Delivering the best solar tech designed for maximum ROI.</p>
+                       <h3 className="text-[17px] font-bold text-[#2A2A2A] mb-2 leading-snug">Performance Driven</h3>
+                       <p className="text-[#6A6A6A] text-[13px] leading-relaxed">Delivering efficient solar systems designed for maximum savings.</p>
                      </div>
                    </div>
                    {/* Card 4 */}
-                   <div className="bg-white p-8 rounded-[24px] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between aspect-square mt-0 md:mt-12">
-                     <div className="w-10 h-10 rounded-full bg-[#18291c] mb-6 flex items-center justify-center shadow-md">
-                        <div className="w-2 h-2 bg-white rounded-full opacity-80" />
-                     </div>
+                   <div className="bg-white p-6 rounded-[20px] shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between h-[250px]">
+                     <div className="w-10 h-10 rounded-full bg-[#18291c] mb-6 shadow-sm shrink-0" />
                      <div>
-                       <h3 className="text-[17px] font-bold text-[#2A2A2A] mb-3 leading-snug">Continuous Innovation</h3>
-                       <p className="text-[#6A6A6A] text-[13px] leading-relaxed">Constantly adopting the best in solar energy solutions.</p>
+                       <h3 className="text-[17px] font-bold text-[#2A2A2A] mb-2 leading-snug">Continuous Innovation</h3>
+                       <p className="text-[#6A6A6A] text-[13px] leading-relaxed">Using modern technology to create smarter energy solutions.</p>
                      </div>
                    </div>
-                </div>
-             </div>
+                 </div>
+               </div>
+            </div>
           </div>
         </section>
 
@@ -185,7 +190,7 @@ export default function AboutPage() {
                  Reduce Electricity Bills With Smart Solar Solutions.
                </h2>
                <div className="relative h-[500px] w-full rounded-[30px] overflow-hidden shadow-xl mt-8">
-                 <Image src="/images/residential.jpg" alt="Smart Solar Solutions" fill className="object-cover" />
+                 <Image src="/images/residential-solar.jpg" alt="Smart Solar Solutions" fill className="object-cover" />
                  <div className="absolute top-4 right-4 w-12 h-12 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center shadow-lg border border-white/30">
                    <div className="w-3.5 h-3.5 bg-[#8fc358] rounded-full shadow-inner" />
                  </div>

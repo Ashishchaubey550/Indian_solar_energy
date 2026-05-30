@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useSpring, useTransform } from "framer-motion";
 import Footer from "@/components/Footer";
@@ -138,12 +139,12 @@ export default function IndustrialSolarPage() {
                 ))}
               </ul>
               
-              <button className="bg-[#1b3022] hover:bg-[#2c4a35] text-white px-5 py-2.5 rounded-full font-medium text-sm transition-all flex items-center gap-2 group mt-4">
-                <span className="pl-3 pr-1">Get Free Quote</span>
+              <Link href="/contact" className="bg-[#1b3022] hover:bg-[#2c4a35] w-fit text-white px-5 py-2.5 rounded-full font-medium text-sm transition-all flex items-center gap-2 group mt-4">
+                <span className="pl-3 pr-1">Get Free Quotation</span>
                 <div className="bg-white text-[#1b3022] rounded-full p-1.5 group-hover:translate-x-1 transition-transform">
                   <ArrowRight className="w-3.5 h-3.5" strokeWidth={2.5} />
                 </div>
-              </button>
+              </Link>
             </motion.div>
             
           </div>
@@ -439,7 +440,7 @@ export default function IndustrialSolarPage() {
                     </div>
                     <div className="text-[12px] text-[#6A6A6A] font-medium mb-1 line-through">Custom Pricing</div>
                     <div className="flex items-center gap-3">
-                      <span className="text-[28px] font-bold text-[#2A2A2A]">Request Quote</span>
+                      <span className="text-[28px] font-bold text-[#2A2A2A]">Get Free Quotation</span>
                       <span className="px-2 py-1 rounded bg-[#E8F3EB] text-[#18291c] text-[12px] font-bold">Best ROI</span>
                     </div>
                   </div>
