@@ -92,7 +92,7 @@ export default function LeadGenModal() {
               exit={{ opacity: 0, scale: 0.95, y: 20 }}
               transition={{ type: "spring", damping: 25, stiffness: 300 }}
               onClick={(e) => e.stopPropagation()}
-              className="bg-white w-full max-w-[900px] rounded-[24px] shadow-2xl overflow-hidden flex flex-col md:flex-row relative"
+              className="bg-white w-full max-w-[900px] max-h-[95vh] md:max-h-[90vh] rounded-[24px] shadow-2xl overflow-hidden flex flex-col md:flex-row relative"
             >
               {/* Close Button */}
               <button
@@ -127,7 +127,7 @@ export default function LeadGenModal() {
               </div>
 
               {/* Right Form Section */}
-              <div className="w-full md:w-7/12 p-8 md:p-10 relative">
+              <div className="w-full md:w-7/12 p-8 md:p-10 relative overflow-y-auto">
                 <AnimatePresence>
                   {isSuccess ? (
                     <motion.div 
@@ -166,36 +166,36 @@ export default function LeadGenModal() {
                   <form onSubmit={handleSubmit} className="space-y-4">
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="space-y-1.5">
-                        <label className="text-[11px] font-bold text-[#A0A0A0] uppercase tracking-wider pl-1">Full Name</label>
-                        <input name="Name" required type="text" placeholder="John Doe" className="w-full bg-gray-50 border border-gray-200 px-4 py-3.5 rounded-xl text-[14px] text-[#2A2A2A] focus:outline-none focus:bg-white focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors" />
+                        <label htmlFor="modalName" className="text-[11px] font-bold text-[#A0A0A0] uppercase tracking-wider pl-1">Full Name</label>
+                        <input id="modalName" name="Name" required type="text" placeholder="John Doe" className="w-full bg-gray-50 border border-gray-200 px-4 py-3.5 rounded-xl text-[14px] text-[#2A2A2A] focus:outline-none focus:bg-white focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors" />
                       </div>
                       <div className="space-y-1.5">
-                        <label className="text-[11px] font-bold text-[#A0A0A0] uppercase tracking-wider pl-1">Phone Number</label>
-                        <input name="Phone" required type="tel" placeholder="+91 XXXXX XXXXX" className="w-full bg-gray-50 border border-gray-200 px-4 py-3.5 rounded-xl text-[14px] text-[#2A2A2A] focus:outline-none focus:bg-white focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors" />
+                        <label htmlFor="modalPhone" className="text-[11px] font-bold text-[#A0A0A0] uppercase tracking-wider pl-1">Phone Number</label>
+                        <input id="modalPhone" name="Phone" required type="tel" placeholder="+91 XXXXX XXXXX" className="w-full bg-gray-50 border border-gray-200 px-4 py-3.5 rounded-xl text-[14px] text-[#2A2A2A] focus:outline-none focus:bg-white focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors" />
                       </div>
                     </div>
                     
                     <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                       <div className="space-y-1.5">
-                        <label className="text-[11px] font-bold text-[#A0A0A0] uppercase tracking-wider pl-1">Property Pincode</label>
-                        <input name="Pincode" required type="text" placeholder="Enter Pincode" className="w-full bg-gray-50 border border-gray-200 px-4 py-3.5 rounded-xl text-[14px] text-[#2A2A2A] focus:outline-none focus:bg-white focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors uppercase tracking-wider" />
+                        <label htmlFor="modalPincode" className="text-[11px] font-bold text-[#A0A0A0] uppercase tracking-wider pl-1">Property Pincode</label>
+                        <input id="modalPincode" name="Pincode" required type="text" placeholder="Enter Pincode" className="w-full bg-gray-50 border border-gray-200 px-4 py-3.5 rounded-xl text-[14px] text-[#2A2A2A] focus:outline-none focus:bg-white focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors uppercase tracking-wider" />
                       </div>
 
                       <div className="space-y-1.5">
-                        <label className="text-[11px] font-bold text-[#A0A0A0] uppercase tracking-wider pl-1">Plant Capacity</label>
-                        <input name="PlantCapacity" required type="text" placeholder="e.g. 5kW" className="w-full bg-gray-50 border border-gray-200 px-4 py-3.5 rounded-xl text-[14px] text-[#2A2A2A] focus:outline-none focus:bg-white focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors uppercase tracking-wider" />
+                        <label htmlFor="modalPlantCapacity" className="text-[11px] font-bold text-[#A0A0A0] uppercase tracking-wider pl-1">Plant Capacity</label>
+                        <input id="modalPlantCapacity" name="PlantCapacity" required type="text" placeholder="e.g. 5kW" className="w-full bg-gray-50 border border-gray-200 px-4 py-3.5 rounded-xl text-[14px] text-[#2A2A2A] focus:outline-none focus:bg-white focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors uppercase tracking-wider" />
                       </div>
                     </div>
 
                     <div className="space-y-1.5">
-                      <label className="text-[11px] font-bold text-[#A0A0A0] uppercase tracking-wider pl-1">Full Address</label>
-                      <input name="Address" required type="text" placeholder="Your complete address" className="w-full bg-gray-50 border border-gray-200 px-4 py-3.5 rounded-xl text-[14px] text-[#2A2A2A] focus:outline-none focus:bg-white focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors" />
+                      <label htmlFor="modalAddress" className="text-[11px] font-bold text-[#A0A0A0] uppercase tracking-wider pl-1">Full Address</label>
+                      <input id="modalAddress" name="Address" required type="text" placeholder="Your complete address" className="w-full bg-gray-50 border border-gray-200 px-4 py-3.5 rounded-xl text-[14px] text-[#2A2A2A] focus:outline-none focus:bg-white focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors" />
                     </div>
 
                     <div className="space-y-1.5">
-                      <label className="text-[11px] font-bold text-[#A0A0A0] uppercase tracking-wider pl-1">Monthly Electricity Bill</label>
+                      <label htmlFor="modalBillAmount" className="text-[11px] font-bold text-[#A0A0A0] uppercase tracking-wider pl-1">Monthly Electricity Bill</label>
                       <div className="relative">
-                        <select name="BillAmount" required defaultValue="" className="w-full bg-gray-50 border border-gray-200 px-4 py-3.5 rounded-xl text-[14px] text-[#2A2A2A] focus:outline-none focus:bg-white focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors appearance-none">
+                        <select id="modalBillAmount" name="BillAmount" required defaultValue="" className="w-full bg-gray-50 border border-gray-200 px-4 py-3.5 rounded-xl text-[14px] text-[#2A2A2A] focus:outline-none focus:bg-white focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors appearance-none">
                           <option value="" disabled hidden>Select an option</option>
                           <option value="under_2000">Under ₹2,000</option>
                           <option value="2000_5000">₹2,000 - ₹5,000</option>

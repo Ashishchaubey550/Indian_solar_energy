@@ -138,20 +138,20 @@ export default function ContactPage() {
                   <form className="space-y-6" onSubmit={handleSubmit}>
                      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         <div className="space-y-2">
-                          <label className="text-[12px] font-bold text-[#2A2A2A] uppercase tracking-wider pl-1">Name</label>
-                          <input type="text" name="Name" required placeholder="Your full name" className="w-full bg-white border border-gray-200 px-5 py-4 rounded-xl text-[14px] focus:outline-none focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors" />
+                          <label htmlFor="contactName" className="text-[12px] font-bold text-[#2A2A2A] uppercase tracking-wider pl-1">Name</label>
+                          <input id="contactName" type="text" name="Name" required placeholder="Your full name" className="w-full bg-white border border-gray-200 px-5 py-4 rounded-xl text-[14px] focus:outline-none focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors" />
                         </div>
                         <div className="space-y-2">
-                          <label className="text-[12px] font-bold text-[#2A2A2A] uppercase tracking-wider pl-1">Phone</label>
-                          <input type="tel" name="Phone" required placeholder="Your phone number" className="w-full bg-white border border-gray-200 px-5 py-4 rounded-xl text-[14px] focus:outline-none focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors" />
+                          <label htmlFor="contactPhone" className="text-[12px] font-bold text-[#2A2A2A] uppercase tracking-wider pl-1">Phone</label>
+                          <input id="contactPhone" type="tel" name="Phone" required placeholder="Your phone number" className="w-full bg-white border border-gray-200 px-5 py-4 rounded-xl text-[14px] focus:outline-none focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors" />
                         </div>
                         <div className="space-y-2">
-                          <label className="text-[12px] font-bold text-[#2A2A2A] uppercase tracking-wider pl-1">Email</label>
-                          <input type="email" name="Email" required placeholder="Your email address" className="w-full bg-white border border-gray-200 px-5 py-4 rounded-xl text-[14px] focus:outline-none focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors" />
+                          <label htmlFor="contactEmail" className="text-[12px] font-bold text-[#2A2A2A] uppercase tracking-wider pl-1">Email</label>
+                          <input id="contactEmail" type="email" name="Email" required placeholder="Your email address" className="w-full bg-white border border-gray-200 px-5 py-4 rounded-xl text-[14px] focus:outline-none focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors" />
                         </div>
                         <div className="space-y-2">
-                          <label className="text-[12px] font-bold text-[#2A2A2A] uppercase tracking-wider pl-1">Topic</label>
-                          <select name="Topic" className="w-full bg-white border border-gray-200 px-5 py-4 rounded-xl text-[14px] focus:outline-none focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors appearance-none text-[#6A6A6A]">
+                          <label htmlFor="contactTopic" className="text-[12px] font-bold text-[#2A2A2A] uppercase tracking-wider pl-1">Topic</label>
+                          <select id="contactTopic" name="Topic" className="w-full bg-white border border-gray-200 px-5 py-4 rounded-xl text-[14px] focus:outline-none focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors appearance-none text-[#6A6A6A]">
                             <option>Solar Installation Inquiry</option>
                             <option>Maintenance & Support</option>
                             <option>Partnership Opportunities</option>
@@ -160,12 +160,12 @@ export default function ContactPage() {
                         </div>
                      </div>
                      <div className="space-y-2">
-                       <label className="text-[12px] font-bold text-[#2A2A2A] uppercase tracking-wider pl-1">Address</label>
-                       <input type="text" name="Address" placeholder="Your full address (City, State, Pincode)" className="w-full bg-white border border-gray-200 px-5 py-4 rounded-xl text-[14px] focus:outline-none focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors" />
+                       <label htmlFor="contactAddress" className="text-[12px] font-bold text-[#2A2A2A] uppercase tracking-wider pl-1">Address</label>
+                       <input id="contactAddress" type="text" name="Address" placeholder="Your full address (City, State, Pincode)" className="w-full bg-white border border-gray-200 px-5 py-4 rounded-xl text-[14px] focus:outline-none focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors" />
                      </div>
                      <div className="space-y-2">
-                       <label className="text-[12px] font-bold text-[#2A2A2A] uppercase tracking-wider pl-1">How can we help?</label>
-                       <textarea name="Message" rows={5} placeholder="Tell us about your project or inquiry..." className="w-full bg-white border border-gray-200 px-5 py-4 rounded-xl text-[14px] focus:outline-none focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors resize-none"></textarea>
+                       <label htmlFor="contactMessage" className="text-[12px] font-bold text-[#2A2A2A] uppercase tracking-wider pl-1">How can we help?</label>
+                       <textarea id="contactMessage" name="Message" rows={5} placeholder="Tell us about your project or inquiry..." className="w-full bg-white border border-gray-200 px-5 py-4 rounded-xl text-[14px] focus:outline-none focus:border-[#4a7a53] focus:ring-1 focus:ring-[#4a7a53] transition-colors resize-none"></textarea>
                      </div>
 
                      {submitStatus === "success" && (

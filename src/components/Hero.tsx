@@ -35,7 +35,8 @@ export default function Hero() {
             fill
             className="object-cover object-center"
             priority
-            quality={100}
+            sizes="100vw"
+            loading="eager"
           />
         </motion.div>
         {/* Adjusted gradient to match mockup's dark bottom fade */}
