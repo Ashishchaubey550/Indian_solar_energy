@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins, Inter } from "next/font/google";
 import ScrollToTop from "@/components/ScrollToTop";
+import FloatingContact from "@/components/FloatingContact";
 import CustomCursor from "@/components/ui/CustomCursor";
 import SmoothScrollProvider from "@/components/SmoothScrollProvider";
 import LeadGenModal from "@/components/LeadGenModal";
@@ -117,6 +118,7 @@ export default function RootLayout({
         <SmoothScrollProvider>
           {children}
           <LeadGenModal />
+          <FloatingContact />
           <ScrollToTop />
           <CustomCursor />
         </SmoothScrollProvider>
