@@ -97,6 +97,7 @@ export default function Header() {
   return (
     <header className="fixed top-6 md:top-8 left-0 w-full z-50 px-3 md:px-8">
       <div
+        style={{ colorScheme: "light" }}
         className={`max-w-[1400px] mx-auto px-6 md:px-8 flex items-center justify-between rounded-full transition-all duration-300 ${
           scrolled ? "bg-white shadow-lg py-3" : "bg-white/95 backdrop-blur-md shadow-sm py-4"
         }`}

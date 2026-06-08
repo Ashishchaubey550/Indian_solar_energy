@@ -109,7 +109,7 @@ export default function Footer() {
               </div>
               <div className="flex flex-col">
                 <span className="text-white/60 text-[11px] font-medium leading-none mb-1.5">Phone No:</span>
-                <span className="text-white/90 text-[13px] leading-none">+91 702430XXXX</span>
+                <span className="text-white/90 text-[13px] leading-none">+91 9889724146</span>
               </div>
             </div>
 
@@ -122,7 +122,7 @@ export default function Footer() {
               </div>
               <div className="flex flex-col">
                 <span className="text-white/60 text-[11px] font-medium leading-none mb-1.5">Email Address:</span>
-                <span className="text-white/90 text-[13px] leading-none">indian.solar@gmail.com</span>
+                <span className="text-white/90 text-[13px] leading-none">surykant@indiansolargreenenergy.com</span>
               </div>
             </div>
 
