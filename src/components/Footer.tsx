@@ -137,7 +137,7 @@ export default function Footer() {
               </div>
               <div className="flex flex-col">
                 <span className="text-white/60 text-[11px] font-medium leading-none mb-1.5">Location:</span>
-                <span className="text-white/90 text-[13px] leading-none">Office No. 21 GDA Tower Golghar <br> Near Indra Ball Viha Gorakhpur</span>
+                  <span className="text-white/90 text-[13px] leading-none">Office No. 21 GDA Tower Golghar <br /> Near Indra Ball Viha Gorakhpur</span>
               </div>
             </div>
 
