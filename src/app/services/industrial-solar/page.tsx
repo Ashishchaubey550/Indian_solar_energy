@@ -6,6 +6,7 @@ import { useState, useRef } from "react";
 import { motion, AnimatePresence, useScroll, useSpring, useTransform } from "framer-motion";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import Calculator from "@/components/Calculator";
 import dynamic from "next/dynamic";
 import { 
   Leaf, 
@@ -460,51 +461,8 @@ export default function IndustrialSolarPage() {
         </section>
 
         {/* --- 8. Calculator Section --- */}
-        <section className="py-20 px-4 md:px-8 max-w-[1400px] mx-auto bg-[#FDFDFD]">
-          <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="max-w-6xl mx-auto bg-[#F4F3F0] rounded-[30px] p-8 md:p-16 flex flex-col md:flex-row gap-12 items-center">
-            {/* Left */}
-            <div className="w-full md:w-1/2 space-y-6">
-              <div className="inline-flex items-center justify-center px-4 py-2 rounded-full border border-gray-300 text-[12px] font-bold text-[#2A2A2A] bg-white shadow-sm">
-                <div className="w-1.5 h-1.5 rounded-full bg-[#1b3022] mr-2" /> Start Here
-              </div>
-              <h2 className="text-3xl md:text-[44px] font-bold text-[#2A2A2A] font-[var(--font-poppins)] leading-[1.2]">
-                See how much you<br/>can save every<br/>month
-              </h2>
-              <p className="text-[#6A6A6A] text-sm md:text-[14px] pt-12 pr-12 leading-relaxed">
-                Get a personalized estimate including monthly savings, recommended solar capacity, and long-term energy benefits for your industrial plant.
-              </p>
-            </div>
-            {/* Right */}
-            <div className="w-full md:w-1/2 space-y-6 bg-[#F4F3F0] pt-4 md:pt-0">
-              <div>
-                <input type="text" placeholder="PINCODE" className="w-full bg-white border-0 px-6 py-4 rounded-full text-[13px] font-bold text-[#2A2A2A] focus:outline-none focus:ring-2 focus:ring-[#1b3022]/20 shadow-sm placeholder:text-[#A0A0A0] uppercase tracking-wider" />
-              </div>
-              <div className="pt-2">
-                <div className="flex justify-between items-center mb-4 px-2">
-                  <label className="block text-[13px] font-bold text-[#2A2A2A]">Monthly Electricity Bill</label>
-                  <span className="text-[13px] font-bold text-[#2A2A2A]">₹0</span>
-                </div>
-                <div className="relative">
-                   <div className="w-full bg-white p-1.5 rounded-full flex items-center justify-between shadow-sm">
-                     <div className="bg-[#18291c] w-10 h-10 rounded-full flex items-center justify-center text-white cursor-pointer hover:bg-[#2c4a35] transition-colors">
-                        <ChevronRight className="w-3.5 h-3.5 ml-0.5" strokeWidth={3} />
-                        <ChevronRight className="w-3.5 h-3.5 -ml-2" strokeWidth={3} />
-                     </div>
-                     <span className="text-[#D0D0D0] text-[13px] pr-5 font-medium tracking-wide">₹ 5,00,000 / Month</span>
-                   </div>
-                </div>
-              </div>
-              <button className="w-full bg-[#18291c] hover:bg-[#2c4a35] text-white py-4 rounded-full font-bold flex items-center justify-center gap-2 mt-2 transition-colors text-[14px]">
-                Calculate Now <ArrowRight className="w-4 h-4" />
-              </button>
-            </div>
-          </motion.div>
-        </section>
+        <Calculator />
+
 
         {/* --- 9. Related Services --- */}
         <section className="py-24 bg-[#18291c]">
