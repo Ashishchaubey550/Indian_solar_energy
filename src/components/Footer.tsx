@@ -120,12 +120,11 @@ export default function Footer() {
                   <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
                 </svg>
               </div>
-              <div className="flex flex-col">
-                <span className="text-white/60 text-[11px] font-medium leading-none mb-1.5">Email Address:</span>
-                <span className="text-white/90 text-[13px] leading-none">info@indiansolargreenenergy.com</span>
-                <span className="text-white/90 text-[13px] leading-none">indiansolargreenenergy@gmail.com</span>
-
-              </div>
+             <div className="flex flex-col">
+  <span className="text-white/60 text-[11px] font-medium leading-none mb-2">Email Address:</span>
+  <span className="text-white/90 text-[13px] leading-relaxed">info@indiansolargreenenergy.com</span>
+  <span className="text-white/60 text-[12px] leading-relaxed">indiansolargreenenergy@gmail.com</span>
+</div>
             </div>
 
             {/* Location */}
@@ -137,7 +136,7 @@ export default function Footer() {
               </div>
               <div className="flex flex-col">
                 <span className="text-white/60 text-[11px] font-medium leading-none mb-1.5">Location:</span>
-                  <span className="text-white/90 text-[13px] leading-none">Office No. 21 GDA Tower Golghar <br /> Near Indra Ball Viha Gorakhpur</span>
+                <span className="text-white/90 text-[13px] leading-relaxed">Office No. 21 GDA Tower Golghar,<br /> Near Indra Ball Viha, Gorakhpur</span>
               </div>
             </div>
 
