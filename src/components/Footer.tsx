@@ -122,7 +122,9 @@ export default function Footer() {
               </div>
               <div className="flex flex-col">
                 <span className="text-white/60 text-[11px] font-medium leading-none mb-1.5">Email Address:</span>
-                <span className="text-white/90 text-[13px] leading-none">surykant@indiansolargreenenergy.com</span>
+                <span className="text-white/90 text-[13px] leading-none">info@indiansolargreenenergy.com</span>
+                <span className="text-white/90 text-[13px] leading-none">indiansolargreenenergy@gmail.com</span>
+
               </div>
             </div>
 
@@ -135,7 +137,7 @@ export default function Footer() {
               </div>
               <div className="flex flex-col">
                 <span className="text-white/60 text-[11px] font-medium leading-none mb-1.5">Location:</span>
-                <span className="text-white/90 text-[13px] leading-none">Location</span>
+                <span className="text-white/90 text-[13px] leading-none">Office No. 21 GDA Tower Golghar <br> Near Indra Ball Viha Gorakhpur</span>
               </div>
             </div>
 
